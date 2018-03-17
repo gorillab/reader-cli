@@ -1,5 +1,5 @@
 {
-  "name": "reader-cli",
+  "name": "@gorillab/reader-cli",
   "version": "0.1.0",
   "description": "cli version of reader",
   "main": "index.js",
