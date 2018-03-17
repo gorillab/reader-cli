@@ -7,18 +7,15 @@ const opn = require('opn');
 
 (async () => {
   const argv = yargs
-  .usage('Usage: $0 <command> [options]')
-  .example('$0')
-  .alias('e', 'end')
-  .string('e')
-  .describe('e', 'End command')
+  .usage('Usage: reader [options]')
+  .alias('e', 'exit')
+  .describe('e', 'Exit command')
   .help('h')
   .alias('h', 'help')
-  .epilog('GitHub https://github.com/gorillab/reader-cli')
+  .epilog('GitHub: https://github.com/gorillab/reader-cli')
   .argv;
 
-  const top = argv._[0] || 10;
-  const { end } = argv;
+  let { exit } = argv;
 
   const res = await fetch('https://5mins.fun/api/v1/posts', {
     method: 'GET',
@@ -36,7 +33,6 @@ const opn = require('opn');
       return `${index + 1}. ${post.title}\n${post.content ? `${post.content}\n` : ''}`
     }).join('\n'));
 
-    let exit = false;
     while (!exit) {
       await prompts({
         type: 'text',

@@ -16,7 +16,8 @@
     "node": ">=9"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node index.js --exit"
   },
   "publishConfig": {
     "access": "public"
