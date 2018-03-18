@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const chalk = require('chalk');
 const yargs = require('yargs');
 const fetch = require('node-fetch');
 const prompts = require('prompts');
@@ -30,7 +31,7 @@ const opn = require('opn');
 
   if (posts.length) {
     console.log(posts.map((post, index) => {
-      return `${index + 1}. ${post.title}\n${post.content ? `${post.content}\n` : ''}`
+      return `${chalk.gray(index + 1)}. ${chalk.hex('#1293fe')(post.title)}${post.content ? `\n${chalk.gray(post.content)}` : ''}\n${chalk.gray.underline(post.url)}\n`;
     }).join('\n'));
 
     while (!exit) {
