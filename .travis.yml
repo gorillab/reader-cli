@@ -1,30 +1,25 @@
 language: node_js
-
 node_js:
-- 9
-
+    - 9
 install:
-- yarn
-
+    - yarn
 cache:
-  yarn: true
-  directories:
-  - node_modules
-
+    yarn: true
+    directories:
+        - node_modules
 script:
-- yarn test
-
+    - 'yarn test'
 deploy:
-  provider: npm
-  email: hello@gorillab.co
-  api_key: "$NPM_AUTH_TOKEN"
-  skip_cleanup: true
-  on:
-    node: '9'
-    branch: master
-    tags: true
-
+    provider: npm
+    email: hello@gorillab.co
+    api_key: $NPM_AUTH_TOKEN
+    skip_cleanup: true
+    on:
+        node: '9'
+        branch: master
+        tags: true
 notifications:
-  email: false
-  slack:
-    secure: nGoW26Moxn8tSjRSSQl2Fh/4ZNBAl4h7mwp4z6v6a3Y8wN3uDCl4PV0jxJ+aPDx++23dQ+M8NN95l21fYxEsz2zkYNAdG9J8QkZJUOB5XxMArG3fO0iSMst1Z+gkAPS4SYNH44wQHvmPrQq1jB1222O8cakxsiuvA1Wng3tLWOXfFU/8m8bK878LY937LXcxBJy70XO4MOWnkHdct18DHBldkd5vcIVHd4v3ZbxYjZFQ0DGUG7Pnp2w216z2a8GCSeUTl39h01ReJg7mAbNGIjCuBRR+Cdk5otTYf7Pv5ivA6UeieVYTO/0ucfvFNrO32obWKf72xO+CMIAKf4VtWtSFSVGNUyidJdV9iXchBXmqczqQ9T1pLJCORzmyE7lLlwuuWiQ0kwjYA8/iXUvaQE90AwADSXpPJrTfdOevCdPGu/rCsidqOYSHWroOy9BFNPyJCsTDqyXZReehzN27iWwXrr8JAlsx1TaTIoPy5Pb2KDiWrnUMZpnRGe+hMqe6rBUYFLhEe8WNmfYHZuXP39OCZsMh5HlujWcaKMen7aC+8rBAuEL8F8PHyqISh5OA2Yv50O1C0nu5WkjrxIXnp9aJv41jPDDKaLwbXpGvlQe9VR6VIFQqp134KMTtT2nQh96sFSDv1/UtA4ZYYS1GaTiGn4/69+XJ0yg76ZtX+HQ=
+    email: false
+    slack:
+        secure: nGoW26Moxn8tSjRSSQl2Fh/4ZNBAl4h7mwp4z6v6a3Y8wN3uDCl4PV0jxJ+aPDx++23dQ+M8NN95l21fYxEsz2zkYNAdG9J8QkZJUOB5XxMArG3fO0iSMst1Z+gkAPS4SYNH44wQHvmPrQq1jB1222O8cakxsiuvA1Wng3tLWOXfFU/8m8bK878LY937LXcxBJy70XO4MOWnkHdct18DHBldkd5vcIVHd4v3ZbxYjZFQ0DGUG7Pnp2w216z2a8GCSeUTl39h01ReJg7mAbNGIjCuBRR+Cdk5otTYf7Pv5ivA6UeieVYTO/0ucfvFNrO32obWKf72xO+CMIAKf4VtWtSFSVGNUyidJdV9iXchBXmqczqQ9T1pLJCORzmyE7lLlwuuWiQ0kwjYA8/iXUvaQE90AwADSXpPJrTfdOevCdPGu/rCsidqOYSHWroOy9BFNPyJCsTDqyXZReehzN27iWwXrr8JAlsx1TaTIoPy5Pb2KDiWrnUMZpnRGe+hMqe6rBUYFLhEe8WNmfYHZuXP39OCZsMh5HlujWcaKMen7aC+8rBAuEL8F8PHyqISh5OA2Yv50O1C0nu5WkjrxIXnp9aJv41jPDDKaLwbXpGvlQe9VR6VIFQqp134KMTtT2nQh96sFSDv1/UtA4ZYYS1GaTiGn4/69+XJ0yg76ZtX+HQ=
+        on_pull_requests: false
